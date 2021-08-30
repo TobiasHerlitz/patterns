@@ -18,10 +18,10 @@ function Index() {
       <Router>
         <Navbar>
           <NavLink to="/" name="HEM" />
-          <NavLink to="/hankinmetoden" offset name="EDITOR" />
+          <NavLink to="/editor" offset name="EDITOR" />
         </Navbar>
         <ContentSwitch>
-          <Route path="/hankinmetoden" component={Editor} />
+          <Route path="/editor" component={Editor} />
           <Route path="/" component={Home} />
         </ContentSwitch>
       </Router>

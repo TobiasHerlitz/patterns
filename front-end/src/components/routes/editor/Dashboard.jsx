@@ -29,7 +29,6 @@ const StyledDashboard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
 `;
 
 const ShapeSelect = styled.select`

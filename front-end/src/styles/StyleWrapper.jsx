@@ -2,12 +2,14 @@ import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import React from 'react';
 
 const theme = {
-  firstColor: '#2B4162',  // Indigo dye
-  secondColor: '#385F71',  // Deep Space Sparkle
-  thirdColor: '#F5F0F6',  // Magnolia
-  fourthColor: '#D7B377',  // Burlywood
-  fifthColor: '#8F754F',  // French Bistre
-  gradientColor: 'linear-gradient(36deg, rgba(172,155,131,0.3113446062018558) 28%, rgba(143,117,79,1) 100%)',
+  firstColor: '#2B4162', // Indigo dye
+  secondColor: '#385F71', // Deep Space Sparkle
+  thirdColor: '#F5F0F6', // Magnolia
+  fourthColor: '#D7B377', // Burlywood
+  fifthColor: '#8F754F', // French Bistre
+  gradientColor: (
+    `linear-gradient(36deg,
+    rgba(172,155,131,0.3113446062018558)28%,rgba(143,117,79,1) 100%)`),
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -36,17 +38,18 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     color: ${theme.firstColor};
   }
-`
+`;
 
 function StyleWrapper(props) {
+  const { children } = props;
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        {props.children}
+        {children}
       </ThemeProvider>
     </>
-  )
+  );
 }
 
 export default StyleWrapper;

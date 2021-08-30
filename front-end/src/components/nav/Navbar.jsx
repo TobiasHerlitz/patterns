@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 function Navbar(props) {
+  const { children } = props;
   return (
     <StyledNav>
-      {props.children}
+      { children }
     </StyledNav>
   );
 }
@@ -16,7 +17,7 @@ const StyledNav = styled.nav`
   justify-content: center;
   padding: 10px;
   top: 10px;
-  left: 10vw;
+  left: 30vw;
 `;
 
 export default Navbar;
